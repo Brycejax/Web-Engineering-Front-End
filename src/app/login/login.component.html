@@ -1,13 +1,23 @@
+
 <form>
-    <div  class = "row">
+    <div  class = "h-100 row align-items-center" style="text-align: center;" >
         <div class = "col-md-4">
         </div>
+
         <div class = "col-md-4">
                 <input type = "email" name = "email" placeholder = "Email">
+                <br>
                 <input type = "password" name = "password" placeholder = "Password">
+                <br>
+                <br>
+                <button class = "btn btn-success">Login</button>
+                <br>
+                <br>
+                <a>Need to Create an Account?</a> &nbsp;  &nbsp;
+                <button class = "btn btn-warning" (click)="register()">Create Account</button>
+                <br>
         </div>
         <div class = "col-md-4">
-            
         </div>
     </div>
 </form>

@@ -34,4 +34,8 @@ public password: string = "";
 
   }
 
+  register(){
+    this.router.navigate(['/register']);
+  }
+
 }
