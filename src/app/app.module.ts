@@ -10,6 +10,8 @@ import { ProductsComponent } from './products/products.component';
 import { FooterComponent } from './footer/footer.component';
 import { AdminComponent } from './admin/admin.component';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
