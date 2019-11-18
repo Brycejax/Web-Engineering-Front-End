@@ -9,6 +9,9 @@ import { RegisterComponent } from './register/register.component';
 import { ProductsComponent } from './products/products.component';
 import { FooterComponent } from './footer/footer.component';
 import { AdminComponent } from './admin/admin.component';
+import { FormsModule } from '@angular/forms'
+
+import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -24,7 +27,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  private BACKEND_URL = "http://localhost:5050";
+  private BACKEND_URL = "http://localhost:5050/products";
 
   constructor(private http: HttpClient) { }
 
@@ -24,6 +24,7 @@ export class ProductsService {
         'Content-Type': 'application/json'
       })
     }
+    this.getallproducts;
     return this.http.post(this.BACKEND_URL, product, options);
   }
 
