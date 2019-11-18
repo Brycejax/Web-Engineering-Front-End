@@ -23,7 +23,7 @@ public password: string = "";
   login(){
     //this should be done in the backend or firebase
     //and encrypt your password
-    if(this.email == "admin" && this.password == "password"){
+    if((this.email == "bjmartin@mail.lipscomb.edu" || "aenordhoff@mail.lipscomb.edu") && this.password == "password"){
       localStorage.setItem("user", this.email);
       this.router.navigate(['/admin']);
     }
