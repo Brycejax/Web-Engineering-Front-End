@@ -7,6 +7,7 @@ import{RegisterComponent} from './register/register.component';
 import{ContactComponent} from './contact/contact.component';
 import{AboutComponent} from './about/about.component';
 import{ServicesComponent} from './services/services.component';
+import{CartComponent} from './cart/cart.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path:'about',
     component: AboutComponent
+  },
+  {
+    path:'cart',
+    component: CartComponent
   }
 ];
 
