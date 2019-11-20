@@ -16,6 +16,8 @@ import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
