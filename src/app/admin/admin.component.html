@@ -1,0 +1,90 @@
+<h4  class ="text-primary"style = "text-align: center;">Welcome Admin</h4>
+
+<div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+
+      </div>
+
+      <div class="col-lg-9">
+
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+        
+
+        <div class="row">
+
+
+          <div *ngFor="let item of products; i as index" class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                  <a href="#"><img class="card-img-top" src="{{item.picture}}" alt=""></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="#">{{item.name}}</a>
+                    </h4>
+                    <h5>Price: ${{item.price}}</h5>
+                    <h5>Type: {{item.type}}</h5>
+                    <h5>Stock: {{item.stock}}</h5>
+                    <p class="card-text">{{item.desc}}</p>
+                  </div>
+                  <div class="card-footer">
+                    <!----<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>---->
+                    <button type="button" id="cart" class="btn btn-success" name="button" (click) = "updateProducts(item)">Update</button>
+                    &nbsp;
+                    <button type="button" id="cart" class="btn btn-danger" name="button">Delete</button>
+                  </div>
+                </div>
+              </div>
+          
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <div class="col-md-10">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>User</th>
+              <th>Order</th>
+              <th></th>
+              <th>Action</th>
+            </tr>
+          </thead>
+    <!-- Work on this-->
+          <tr *ngFor="let item of orders; j as index">
+            <td *ngIf="!edit_mode">{{ item.title }}</td>
+            <td *ngIf="edit_mode">
+              <input type="text" name="title" id="title" [(ngModel)]="item.title">
+            </td>
+    
+            <td>{{ item.author }}</td>
+            <td>{{ item.price }}</td>
+            <td>
+              <button *ngIf="!edit_mode" type="button" id="update" class="btn btn-warning" name="button"
+                (click)="edit(item)"
+              >
+                Edit
+              </button>
+              <button *ngIf="edit_mode" type="button" id="update" class="btn btn-warning" name="button"
+                (click)="updateBook(item)"
+              >
+                Update
+              </button>
+            </td>
+    
+          </tr>
+        </table>
+      </div>
+
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
