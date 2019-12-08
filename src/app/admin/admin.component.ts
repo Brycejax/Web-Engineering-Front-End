@@ -9,9 +9,11 @@ import { AdminService } from './admin.service'
 export class AdminComponent implements OnInit {
 
   name: string = "";
+  type: string = "";
   price: number = 0;
-  desc: string = "";
+  stock: number = 0;
   picture: string = "";
+
 
   edit_mode: boolean = false;
 
@@ -32,6 +34,49 @@ export class AdminComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  addproducts() {
+    const products = {
+      name: this.name,
+      type: this.type,
+      stock: this.stock,
+      price: this.price,
+      picture: this.picture
+    }
+
+    this.adminService.addNewProducts(products).subscribe(
+      data=> {
+        console.log("Product has been submitted successfully");
+        console.log(data);
+        this.getallproducts();
+      },
+      error=> {
+        console.log("Recieved an error");
+        console.log(error);
+      }
+    )
+  }
+  updateproducts(products: any){
+    this.adminService.updateProducts(products, products._id).subscribe(
+      data => {
+        alert("Product was updated successfully")
+      },
+      error=> {
+        alert("Got an Error");
+      }
+    )
+  }
+
+  deleteproducts(products: any){
+    this.adminService.deleteProducts(products, products._id).subscribe(
+      data=> {
+        alert("products was deleted")
+      },
+      error=> {
+        alert("error. could not delete.");
+      }
+    )
   }
 
 

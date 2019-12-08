@@ -36,6 +36,9 @@ updateProducts(data: any, id:string): Observable<any>{
   }
   return this.http.put(this.BACKEND_URL + "/" + id, data, options);
 }
+deleteProducts(product: any, id:string): Observable<any> {
+  return this.http.delete(this.BACKEND_URL, product);
+}
 
 //retrieving all orders for our admin page
 
