@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import {ProductsComponent} from './products/products.component';
 import {AdminComponent} from './admin/admin.component';
-import{RegisterComponent} from './register/register.component';
+import{RegisterComponent} from './auth/register/register.component';
 import{ContactComponent} from './contact/contact.component';
 import{AboutComponent} from './about/about.component';
 import{ServicesComponent} from './services/services.component';
