@@ -1,41 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { AuthService } from '../register/auth.service';
+
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  host: {'[@moveIn]': ''}
 })
+
+
+
 export class LoginComponent implements OnInit {
 
-public email: string  = "";
-public password: string = "";
-
-  constructor(private router: Router) { }
+  authError: any;
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
-    //if already logged in
-    if(localStorage.getItem('user')){
-      this.router.navigate(['/products'])
-    }
+    this.auth.eventAuthError$.subscribe( data =>{
+      this.authError = data;
+    });
   }
-
-  login(){
-    //this should be done in the backend or firebase
-    //and encrypt your password
-    if((this.email == "bjmartin@mail.lipscomb.edu" || "aenordhoff@mail.lipscomb.edu") && this.password == "password"){
-      localStorage.setItem("user", this.email);
-      this.router.navigate(['/admin']);
-    }
-    else
-    {
-      this.router.navigate(['/login']);
-    }
+  login(frm) {
+    this.auth.login(frm.value.email, frm.value.password);
 
   }
 
-  register(){
-    this.router.navigate(['/register']);
-  }
 
 }

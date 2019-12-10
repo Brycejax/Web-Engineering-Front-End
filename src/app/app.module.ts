@@ -19,6 +19,26 @@ import { ContactComponent } from './contact/contact.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
 
+
+import { AngularFireModule } from '@angular/fire'
+import { AngularFireDatabaseModule } from '@angular/fire/database'
+import {environment} from '../environments/environment'
+
+import {AngularFireAuthModule} from '@angular/fire/auth'
+import {AngularFirestoreModule } from '@angular/fire/firestore'
+
+
+// 2. Add your credentials from step 1
+export const config = {
+    apiKey: 'AIzaSyCFVb2zwnd5XSiasZcOiGIg14aqCvGX7fk',
+    authDomain: 'web-eng-final.firebaseapp.com',
+    databaseURL: 'https://web-eng-final.firebaseio.com',
+    projectId: 'web-eng-final',
+    storageBucket: 'web-eng-final.appspot.com',
+    messagingSenderId: '958772223500'
+};
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,13 +51,20 @@ import { CartComponent } from './cart/cart.component';
     AboutComponent,
     ServicesComponent,
     ContactComponent,
-    CartComponent
+    CartComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(config),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule
+  
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
