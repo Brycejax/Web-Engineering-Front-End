@@ -57,7 +57,7 @@ export class AdminComponent implements OnInit {
       }
     )
   }
-  updateproducts(products: any){
+  updateProducts(products: any){
     this.adminService.updateProducts(products, products._id).subscribe(
       data => {
         alert("Product was updated successfully")
