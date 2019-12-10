@@ -8,6 +8,7 @@ import{ContactComponent} from './contact/contact.component';
 import{AboutComponent} from './about/about.component';
 import{ServicesComponent} from './services/services.component';
 import{CartComponent} from './cart/cart.component';
+import{ PaymentComponent } from './payment/payment.component';
 
 
 const routes: Routes = [
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path:'cart',
     component: CartComponent
+  },
+  {
+    path:'checkout',
+    component:PaymentComponent
   }
 ];
 
