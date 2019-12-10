@@ -59,10 +59,7 @@ export class AdminComponent implements OnInit {
     )
   }
   updateProducts(products: any){
-<<<<<<< HEAD
-=======
     this.edit_mode = false;
->>>>>>> ec61aec9c78cac3b9cc744577d63a8bf82518d22
     this.adminService.updateProducts(products, products._id).subscribe(
       data => {
         alert("Product was updated successfully")
