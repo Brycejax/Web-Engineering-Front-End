@@ -3,13 +3,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
   private BACKEND_URL = "http://localhost:5050/products";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, ) { }
 
   //retrieve all products from the backend through http get
 
@@ -27,6 +29,7 @@ export class ProductsService {
     this.getallproducts;
     return this.http.post(this.BACKEND_URL, product, options);
   }
+
 
   //updating product at given id
   updateProduct(data: any, id: string): Observable<any>{

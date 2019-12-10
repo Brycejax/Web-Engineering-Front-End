@@ -25,7 +25,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database'
 import {environment} from '../environments/environment'
 
 import {AngularFireAuthModule} from '@angular/fire/auth'
-import {AngularFirestoreModule } from '@angular/fire/firestore'
+import {AngularFirestoreModule } from '@angular/fire/firestore';
+import { PaymentComponent } from './payment/payment.component'
 
 
 // 2. Add your credentials from step 1
@@ -52,6 +53,7 @@ export const config = {
     ServicesComponent,
     ContactComponent,
     CartComponent,
+    PaymentComponent,
     
   ],
   imports: [
