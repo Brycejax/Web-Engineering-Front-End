@@ -17,6 +17,7 @@ export class AdminComponent implements OnInit {
 
   edit_mode: boolean = false;
 
+
   products: any[];
 
   constructor(private adminService: AdminService) { }
@@ -57,7 +58,8 @@ export class AdminComponent implements OnInit {
       }
     )
   }
-  updateproducts(products: any){
+  updateProducts(products: any){
+    this.edit_mode = false;
     this.adminService.updateProducts(products, products._id).subscribe(
       data => {
         alert("Product was updated successfully")
@@ -81,7 +83,6 @@ export class AdminComponent implements OnInit {
 
   edit(item:any){
     this.edit_mode = true;
-
   }
 
 
