@@ -76,7 +76,7 @@ export class AdminComponent implements OnInit {
         alert("products was deleted")
       },
       error=> {
-        alert("error. could not delete.");
+        alert("error. could not delete. must have DB authentication");
       }
     )
   }

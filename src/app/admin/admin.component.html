@@ -1,26 +1,5 @@
 <h4  class ="text-primary"style = "text-align: center;">Welcome Admin</h4>
-<h5>Add a Product</h5>
-
-<form>
-  
-        <label for="name">Name</label>
-        <input  name="name" type="name" class="form-control">
-
-
-        <label for="price">Price</label>
-        <input name="price" type="price" class="form-control">
-
-        <label for="type">Type</label>
-        <input name="type" type="type" class="form-control">
-
-        <label for="stock">Stock</label>
-        <input  name="stock" type="stock" class="form-control">
-
-        <label for="picture">picture</label>
-        <input  name="picture" type="picture" class="form-control">
-
-
-  </form>
+<h5 style = "text-align: center;">To add or Delete a product, We will need to go directly to the database </h5>
 
 
 <div class="container">
@@ -78,7 +57,7 @@
                   <div class="card-footer">
                     <!----<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>---->
                     
-                    <button *ngIf="!edit_mode" type="button" id="update" class="btn btn-warning" name="button"
+                    <button ALIGN = "center" *ngIf="!edit_mode" type="button" id="update" class="btn btn-warning" name="button"
                     (click)="edit(item)"
                   >
                     Edit
@@ -88,9 +67,6 @@
                   >
                     Update
                   </button>
-
-                    &nbsp;
-                    <button type="button" id="cart" class="btn btn-danger" name="button" (click) = "deleteproducts(item)">Delete</button>
                   </div>
                 </div>
               </div>
