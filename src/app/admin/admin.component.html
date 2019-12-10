@@ -1,4 +1,23 @@
 <h4  class ="text-primary"style = "text-align: center;">Welcome Admin</h4>
+<h5>Add a Product</h5>
+
+<form>
+  
+        <label for="name">Name</label>
+        <input  name="name" type="name" class="form-control">
+
+
+        <label for="price">Price</label>
+        <input name="price" type="price" class="form-control">
+
+        <label for="type">Type</label>
+        <input name="type" type="type" class="form-control">
+
+        <label for="stock">Stock</label>
+        <input  name="stock" type="stock" class="form-control">
+
+  </form>
+
 
 <div class="container">
 
@@ -57,48 +76,6 @@
     </div>
 
   </div>
-
-  
-
-  <div class="col-md-10">
-      <br>
-        <table class="table table-striped">
-          <thead class="thead-dark">
-            <tr>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <th>User</th>
-              <th>Order</th>
-              <th></th>
-              <th>Action</th>
-            </tr>
-          </thead>
-    <!-- Work on this-->
-          <tr *ngFor="let item of orders; j as index">
-            <td *ngIf="!edit_mode">{{ item.title }}</td>
-            <td *ngIf="edit_mode">
-              <input type="text" name="title" id="title" [(ngModel)]="item.title">
-            </td>
-    
-            <td>{{ item.author }}</td>
-            <td>{{ item.price }}</td>
-            <td>
-              <button *ngIf="!edit_mode" type="button" id="update" class="btn btn-warning" name="button"
-                (click)="edit(item)"
-              >
-                Edit
-              </button>
-              <button *ngIf="edit_mode" type="button" id="update" class="btn btn-warning" name="button"
-                (click)="updateBook(item)"
-              >
-                Update
-              </button>
-            </td>
-    
-          </tr>
-        </table>
-      </div>
-      </div>
-
 
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

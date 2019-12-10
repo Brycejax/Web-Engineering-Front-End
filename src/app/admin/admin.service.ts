@@ -24,7 +24,9 @@ addNewProducts(product: any): Observable<any> {
       'Content-Type': 'application/json'
     })
   }
+  this.getAllProducts();
   return this.http.post(this.BACKEND_URL, product , options);
+  
 }
 
 updateProducts(data: any, id:string): Observable<any>{
