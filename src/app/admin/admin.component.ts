@@ -79,5 +79,10 @@ export class AdminComponent implements OnInit {
     )
   }
 
+  edit(item:any){
+    this.edit_mode = true;
+
+  }
+
 
 }

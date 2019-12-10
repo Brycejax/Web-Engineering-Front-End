@@ -30,9 +30,20 @@
                   </div>
                   <div class="card-footer">
                     <!----<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>---->
-                    <button type="button" id="cart" class="btn btn-success" name="button" (click) = "updateProducts(item)">Update</button>
+                    
+                    <button *ngIf="!edit_mode" type="button" id="update" class="btn btn-warning" name="button"
+                    (click)="edit(item)"
+                  >
+                    Edit
+                  </button>
+                  <button *ngIf="edit_mode" type="button" id="update" class="btn btn-warning" name="button"
+                    (click)="updateproducts(item)"
+                  >
+                    Update
+                  </button>
+
                     &nbsp;
-                    <button type="button" id="cart" class="btn btn-danger" name="button">Delete</button>
+                    <button type="button" id="cart" class="btn btn-danger" name="button" (click) = "deleteproducts(item)">Delete</button>
                   </div>
                 </div>
               </div>
